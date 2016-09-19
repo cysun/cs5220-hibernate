@@ -6,7 +6,7 @@
     <persistence-unit name="hibernate-examples" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/cs520" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:postgresql://localhost:5432/cs5220" />
             <property name="javax.persistence.jdbc.driver" value="org.postgresql.Driver" />
             <property name="javax.persistence.jdbc.user" value="cysun" />
             <property name="javax.persistence.jdbc.password" value="abcd" />

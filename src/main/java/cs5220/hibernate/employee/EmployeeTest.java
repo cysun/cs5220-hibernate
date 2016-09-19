@@ -15,26 +15,26 @@ public class EmployeeTest {
         EntityManager entityManager = entityManagerFactory
             .createEntityManager();
 
-        // Find the employee whose id is 2.
-        Employee e2 = entityManager.find( Employee.class, 2 );
-        System.out.println( e2.getName() );
+        // Find the employee whose id is 3.
+        Employee e3 = entityManager.find( Employee.class, 3 );
+        System.out.println( e3.getName() );
 
-        // Print employee #2's supervisor's name.
-        System.out.println( e2.getSupervisor().getName() );
+        // Print employee #3's supervisor's supervisor's name.
+        System.out.println( e3.getSupervisor().getSupervisor().getName() );
 
-        // Add a new employee who's going to be supervised by employee #2.
+        // Add a new employee who's going to be supervised by employee #3.
         Employee employee = new Employee();
         employee.setName( "Jim" );
-        employee.setSupervisor( e2 );
+        employee.setSupervisor( e3 );
         entityManager.getTransaction().begin();
         entityManager.persist( employee );
         entityManager.getTransaction().commit();
 
-        // Find all the employees who are supervised by employee #2.
+        // Find all the employees who are supervised by employee #3.
         List<Employee> subordinates = entityManager
-            .createQuery( "from Employee where supervisor.id = :id",
+            .createQuery( "from Employee where supervisor = :supervisor",
                 Employee.class )
-            .setParameter( "id", 2 )
+            .setParameter( "supervisor", e3 )
             .getResultList();
         for( Employee subordinate : subordinates )
             System.out.println( subordinate.getName() );
