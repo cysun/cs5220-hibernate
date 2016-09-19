@@ -1,4 +1,4 @@
-package cs520.hibernate.account;
+package cs5220.hibernate.account;
 
 import java.io.Serializable;
 import java.util.ArrayList;

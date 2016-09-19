@@ -1,4 +1,4 @@
-package cs520.hibernate.employee;
+package cs5220.hibernate.employee;
 
 import java.io.Serializable;
 

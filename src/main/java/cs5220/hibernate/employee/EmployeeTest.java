@@ -1,4 +1,4 @@
-package cs520.hibernate.employee;
+package cs5220.hibernate.employee;
 
 import java.util.List;
 
@@ -10,8 +10,10 @@ public class EmployeeTest {
 
     public static void main( String args[] )
     {
-        EntityManagerFactory entityManagerFactory = Persistence.createEntityManagerFactory( "hibernate-examples" );
-        EntityManager entityManager = entityManagerFactory.createEntityManager();
+        EntityManagerFactory entityManagerFactory = Persistence
+            .createEntityManagerFactory( "hibernate-examples" );
+        EntityManager entityManager = entityManagerFactory
+            .createEntityManager();
 
         // Find the employee whose id is 2.
         Employee e2 = entityManager.find( Employee.class, 2 );
@@ -29,8 +31,9 @@ public class EmployeeTest {
         entityManager.getTransaction().commit();
 
         // Find all the employees who are supervised by employee #2.
-        List<Employee> subordinates = entityManager.createQuery(
-            "from Employee where supervisor.id = :id", Employee.class )
+        List<Employee> subordinates = entityManager
+            .createQuery( "from Employee where supervisor.id = :id",
+                Employee.class )
             .setParameter( "id", 2 )
             .getResultList();
         for( Employee subordinate : subordinates )
