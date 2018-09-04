@@ -1,3 +1,3 @@
 drop table employees;
 
-drop sequence hibernate_sequence;
+drop table hibernate_sequence;

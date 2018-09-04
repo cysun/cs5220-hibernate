@@ -1,4 +1,8 @@
-create sequence hibernate_sequence minvalue 100;
+create table hibernate_sequence (
+    next_val bigint
+);
+
+insert into hibernate_sequence values ( 100 );
 
 create table employees (
     id              integer primary key,
