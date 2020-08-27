@@ -27,7 +27,7 @@ public class EmployeeTest {
         employee.setName( "Jim" );
         employee.setSupervisor( e3 );
         entityManager.getTransaction().begin();
-        entityManager.persist( employee );
+        employee = entityManager.merge( employee );
         entityManager.getTransaction().commit();
 
         // Find all the employees who are supervised by employee #3.
