@@ -6,8 +6,8 @@
     <persistence-unit name="hibernate-examples" transaction-type="RESOURCE_LOCAL">
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
         <properties>
-            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://cs3.calstatela.edu/cs3220stu31?allowPublicKeyRetrieval=true&amp;useSSL=false" />
-            <property name="javax.persistence.jdbc.user" value="cs3220stu31" />
+            <property name="javax.persistence.jdbc.url" value="jdbc:mysql://cs3.calstatela.edu/cs5220stu31?allowPublicKeyRetrieval=true&amp;useSSL=false" />
+            <property name="javax.persistence.jdbc.user" value="cs5220stu31" />
             <property name="javax.persistence.jdbc.password" value="abcd" />
             <property name="hibernate.dialect" value="org.hibernate.dialect.MySQL8Dialect" />
             <property name="hibernate.show_sql" value="false" />
